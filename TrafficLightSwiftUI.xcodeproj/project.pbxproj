@@ -11,7 +11,7 @@
 		6A1265492666C940007DDFAE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1265482666C940007DDFAE /* ContentView.swift */; };
 		6A12654B2666C942007DDFAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A12654A2666C942007DDFAE /* Assets.xcassets */; };
 		6A12654E2666C942007DDFAE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A12654D2666C942007DDFAE /* Preview Assets.xcassets */; };
-		6A12655B2666C9A4007DDFAE /* ColorCircles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A12655A2666C9A4007DDFAE /* ColorCircles.swift */; };
+		6A12655B2666C9A4007DDFAE /* ColorCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A12655A2666C9A4007DDFAE /* ColorCircle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,7 +21,7 @@
 		6A12654A2666C942007DDFAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A12654D2666C942007DDFAE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6A12654F2666C942007DDFAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A12655A2666C9A4007DDFAE /* ColorCircles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCircles.swift; sourceTree = "<group>"; };
+		6A12655A2666C9A4007DDFAE /* ColorCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCircle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 			children = (
 				6A1265462666C940007DDFAE /* TrafficLightSwiftUIApp.swift */,
 				6A1265482666C940007DDFAE /* ContentView.swift */,
-				6A12655A2666C9A4007DDFAE /* ColorCircles.swift */,
+				6A12655A2666C9A4007DDFAE /* ColorCircle.swift */,
 				6A12654A2666C942007DDFAE /* Assets.xcassets */,
 				6A12654F2666C942007DDFAE /* Info.plist */,
 				6A12654C2666C942007DDFAE /* Preview Content */,
@@ -142,7 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A1265492666C940007DDFAE /* ContentView.swift in Sources */,
-				6A12655B2666C9A4007DDFAE /* ColorCircles.swift in Sources */,
+				6A12655B2666C9A4007DDFAE /* ColorCircle.swift in Sources */,
 				6A1265472666C940007DDFAE /* TrafficLightSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

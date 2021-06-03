@@ -7,23 +7,23 @@
 
 import SwiftUI
 
-struct ColorCircles: View {
+struct ColorCircle: View {
     var color: Color
     
     var body: some View {
-        ZStack {
-            Color(.black)
+        VStack {
         Circle()
             .foregroundColor(color)
-            .frame(width: 150, height: 150)
-            .clipShape(Circle())
+            .frame(width: 120, height: 120)
             .overlay(Circle().stroke(Color.white, lineWidth: 6))
+            
+        
         }
     }
 }
 
 struct ColorCircles_Previews: PreviewProvider {
     static var previews: some View {
-        ColorCircles(color: .purple)
+        ColorCircle(color: .purple)
     }
 }

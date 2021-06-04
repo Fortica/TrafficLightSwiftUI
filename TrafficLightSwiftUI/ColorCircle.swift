@@ -8,22 +8,24 @@
 import SwiftUI
 
 struct ColorCircle: View {
-    var color: Color
+    
+    // color и opacity не @state т.к. инициализируются только один раз
+    let color: Color
+    let opacity: Double
     
     var body: some View {
         VStack {
         Circle()
             .foregroundColor(color)
             .frame(width: 120, height: 120)
+            .opacity(opacity)
             .overlay(Circle().stroke(Color.white, lineWidth: 6))
-            
-        
         }
     }
 }
 
 struct ColorCircles_Previews: PreviewProvider {
     static var previews: some View {
-        ColorCircle(color: .purple)
+        ColorCircle(color: .purple, opacity: 1)
     }
 }

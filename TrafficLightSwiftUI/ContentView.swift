@@ -7,70 +7,66 @@
 
 import SwiftUI
 
+enum CurrentLight {
+    case red, yellow, green
+}
+
 struct ContentView: View {
     
+    @State private var buttonTitle = "START"
+    
+    // значения по умолчанию ждя цветов светофора
+    @State private var redColor = 0.3
+    @State private var yellowColor = 0.3
+    @State private var greenColor = 0.3
+    
     @State private var currentLight = CurrentLight.red
-    private let lightIsOn = 1.0
-    private let lightIsOff = 0.3
     
-    @State private var redColor = Color(.red).opacity(0.3)
-    @State private var yellowColor = Color(.yellow).opacity(0.3)
-    @State private var greenColor = Color(.green).opacity(0.3)
-    
-    @State var start = "START"
-    
+    private func buttonPressed() {
+        
+        let lightIsOn = 1.0
+        let lightIsOff = 0.3
+        
+        switch currentLight {
+        case .red:
+            redColor = lightIsOn
+            greenColor = lightIsOff
+            currentLight = .yellow
+        case .yellow:
+            yellowColor = lightIsOn
+            redColor = lightIsOff
+            currentLight = .green
+        case .green:
+            greenColor = lightIsOn
+            yellowColor = lightIsOff
+            currentLight = .red
+        }
+    }
+}
+
+extension ContentView {
     var body: some View {
         ZStack {
-        Color(.black)
-            .ignoresSafeArea()
+            Color.black
+                .ignoresSafeArea()
             
             VStack(spacing: 30) {
-            ColorCircle(color: redColor)
-            ColorCircle(color: yellowColor)
-            ColorCircle(color: greenColor)
+                ColorCircle(color: .red, opacity: redColor)
+                ColorCircle(color: .yellow, opacity: yellowColor)
+                ColorCircle(color: .green, opacity: greenColor)
                 
                 Spacer()
                 
-                Button(action: {buttonPressed()}) {
-                Text(start)
-            .font(.title)
-            .foregroundColor(.white)
-            .frame(width: 180, height: 60)
-            .overlay(
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.white, lineWidth: 4)
-            )
-                    .background(Color.blue)
-                    .cornerRadius(20)
-        }
+                ColorButton(title: buttonTitle) {
+                    if buttonTitle == "START" {
+                        buttonTitle = "NEXT"
+                    }
+                    buttonPressed()
+                }
             }
             .padding()
         }
     }
-    
-    enum CurrentLight {
-        case red, yellow, green
-    }
-    
-     func buttonPressed() {
-        start = "NEXT"
-        
-        switch currentLight {
-        
-        case .red:
-            redColor = Color(.red).opacity(lightIsOn)
-            greenColor = Color(.green).opacity(lightIsOff)
-            currentLight = .yellow
-        case .yellow:
-            yellowColor = Color(.yellow).opacity(lightIsOn)
-            redColor = Color(.red).opacity(lightIsOff)
-            currentLight = .green
-        case .green:
-            greenColor = Color(.green).opacity(lightIsOn)
-            yellowColor = Color(.yellow).opacity(lightIsOff)
-            currentLight = .red
-        }
-}
 }
 
 
